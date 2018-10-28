@@ -37,13 +37,13 @@ const KmtWhiteSquare = styled.a`
   background-color: ${props => props.theme.white};
 
   @media (min-width: 1101px) {
-    height: 800px;
-    width: 800px;
+    height: 400px;
+    width: 400px;
   }
 
   @media (max-width: 1100px) {
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
   }
 
   @media (max-width: 768px) {
@@ -77,25 +77,46 @@ const Hovered = styled.div`
   background-color: ${props => props.theme.black};
   animation: ${appear} 1.2s linear;
   color: ${props => props.theme.white};
-  letter-spacing: 1rem;
+  letter-spacing: 1.8rem;
+  padding-left: 1rem;
+  
   @media (min-width: 1101px) {
-    font-size: 3rem;
+    font-size: 2rem;
+    span {
+    padding: 0 -0.4rem;
+  }
   }
 
   @media (max-width: 1100px) {
-    font-size: 3rem;
+    font-size: 2rem;
+    span {
+    padding: 0 -0.4rem;
+  }
   }
 
   @media (max-width: 768px) {
     font-size: 2rem;
+    span {
+    padding: 0 -0.4rem;
+  }
   }
 
   @media (max-width: 414px) {
+    padding-left: 0;
+    letter-spacing: 0.5rem;
     font-size: 2rem;
+    span {
+      padding: 0 -0.4rem;
+    }
   }    
 
   @media (max-width: 375px) {
-    font-size: 2rem;
+    padding-left: 0;
+    letter-spacing: 0.5rem;
+    font-size: 1rem;
+    span {
+      padding: 0 -0.4rem;
+    }
   }
 `
 
@@ -122,9 +143,8 @@ class KmtSection extends Component {
       <KmtSectionContainer>
         <KmtWhiteSquare href='https://vsco.co/light-world/journal/queens-of-kemet' onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
           {
-            this.state.mouseEntered ? <KmtImg src={this.props.content.sectionImage.fields.file.url} /> : <Hovered>K M . T</Hovered>
+            this.state.mouseEntered ? <KmtImg src={this.props.content.sectionImage.fields.file.url} /> : <Hovered>KM<span>.</span>T</Hovered>
           }
-          
         </KmtWhiteSquare>
       </KmtSectionContainer>
     )
