@@ -12,16 +12,6 @@ const appear = keyframes`
   }
 `
 
-const disappear = keyframes`
-  0% {
-    opacity: 1;
-  }
-
-  100$ {
-    opacity: 0;
-  }
-`
-
 const KmtSectionContainer = styled.div`
   height: 100vh;
   display: flex;
@@ -75,6 +65,9 @@ const Hovered = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.black};
+`
+
+const StyledSectionTitle = styled.div`
   animation: ${appear} 1.2s linear;
   color: ${props => props.theme.white};
   letter-spacing: 1.8rem;
@@ -142,9 +135,11 @@ class KmtSection extends Component {
     return(
       <KmtSectionContainer>
         <KmtWhiteSquare href='https://vsco.co/light-world/journal/queens-of-kemet' onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-          {
-            this.state.mouseEntered ? <KmtImg src={this.props.content.sectionImage.fields.file.url} /> : <Hovered>KM<span>.</span>T</Hovered>
-          }
+          <Hovered>
+            { 
+              this.state.mouseEntered ? <KmtImg src={this.props.content.sectionImage.fields.file.url} /> : <StyledSectionTitle>KM<span>.</span>T</StyledSectionTitle>
+            }
+          </Hovered>
         </KmtWhiteSquare>
       </KmtSectionContainer>
     )
