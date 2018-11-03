@@ -7,11 +7,11 @@ const rainbow = keyframes`
   }
 
   6.67% {
-    color: #B5B5FF;
+    color: #FFBDFC;
   }
 
   13.34% {
-    color: #8CC1F7;
+    color: #B5B5FF;
   }
 
   20.01% {
