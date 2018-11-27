@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import * as contentful from 'contentful';
 
 import Hero from './Hero/Hero';
